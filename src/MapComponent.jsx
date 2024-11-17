@@ -9,7 +9,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png',
 })
 
-const MapComponent = ({ locations }) => {
+const MapComponent = ({ canchas }) => {
   const center = [-28.468611, -65.779167]
 
   return (
@@ -17,7 +17,7 @@ const MapComponent = ({ locations }) => {
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {locations.map((location, index) => (
+      {canchas.map((location, index) => (
         <Marker key={index} position={[location.lat, location.lng]}>
           <Popup>
             <div className="font-semibold text-amber-800">{location.name}</div>

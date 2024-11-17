@@ -1,46 +1,9 @@
 import { useState, useEffect } from 'react'
-import { ArrowRight, Clock, Users, MapPin, Facebook, Instagram, Twitter } from 'lucide-react'
+import { ArrowRight, Clock, Users, MapPin, Facebook, Instagram, Twitter, User } from 'lucide-react'
 import MapComponent from './MapComponent'
+import canchas from './json/canchas.json'
+import deportes from './json/deportes.json'
 import 'leaflet/dist/leaflet.css'
-
-const locations = [
-  { name: "Polideportivo Municipal", lat: -28.468611, lng: -65.779167 },
-  { name: "Estadio Bicentenario", lat: -28.463889, lng: -65.770833 },
-  { name: "Club Atlético Vélez Sarsfield", lat: -28.471944, lng: -65.785556 },
-  { name: "Complejo Deportivo La Gruta", lat: -28.459722, lng: -65.776389 },
-  { name: "Cancha de Fútbol Parque Adán Quiroga", lat: -28.455556, lng: -65.783333 },
-]
-
-const deportes = [
-  {
-    name: "Fútbol",
-    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80",
-    description: "Forma parte de nuestros equipos y compite en ligas locales.",
-    edades: ["6-12 años", "13-17 años", "18+ años"],
-    horarios: ["Lunes y Miércoles 16:00-18:00", "Martes y Jueves 18:00-20:00", "Sábados 10:00-12:00"]
-  },
-  {
-    name: "Baloncesto",
-    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=80",
-    description: "Mejora tus habilidades en la cancha con nuestros entrenamientos.",
-    edades: ["8-14 años", "15-20 años", "21+ años"],
-    horarios: ["Martes y Jueves 17:00-19:00", "Lunes y Miércoles 19:00-21:00", "Sábados 09:00-11:00"]
-  },
-  {
-    name: "Tenis",
-    image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=800&q=80",
-    description: "Aprende o perfecciona tu técnica con nuestros instructores.",
-    edades: ["7-12 años", "13-18 años", "19+ años"],
-    horarios: ["Lunes y Viernes 15:00-17:00", "Martes y Jueves 17:00-19:00", "Sábados 08:00-10:00"]
-  },
-  {
-    name: "Natación",
-    image: "https://images.unsplash.com/photo-1560090995-01632a28895b?w=800&q=80",
-    description: "Desde principiantes hasta avanzados, tenemos clases para todos.",
-    edades: ["5-10 años", "11-16 años", "17+ años"],
-    horarios: ["Miércoles y Viernes 16:00-18:00", "Martes y Jueves 18:00-20:00", "Sábados 11:00-13:00"]
-  },
-]
 
 function App() {
   const [mapLoaded, setMapLoaded] = useState(false)
@@ -84,7 +47,7 @@ function App() {
             Descubre nuevas pasiones, haz amigos y mantente en forma con nuestras emocionantes actividades deportivas en la capital catamarqueña.
           </p>
           <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold text-lg px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center mx-auto">
-            Conoce nuestras instalaciones <ArrowRight className="ml-2" />
+            <a href="#ubicaciones">Conoce nuestras instalaciones</a><ArrowRight className="ml-2" />
           </button>
         </section>
 
@@ -114,6 +77,16 @@ function App() {
                     <ul className="list-disc list-inside text-gray-600">
                       {deporte.horarios.map((horario, i) => (
                         <li key={i}>{horario}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-4">
+                    <h5 className="font-semibold text-amber-700 mb-2 flex items-center">
+                      <User className="mr-2" size={20} /> Docente:
+                    </h5>
+                    <ul className="list-disc list-inside text-gray-600">
+                      {deporte.docente.map((docente, i) => (
+                        <li key={i}>{docente}</li>
                       ))}
                     </ul>
                   </div>
@@ -160,15 +133,22 @@ function App() {
               </p>
             </div>
             <div className="h-[500px] md:h-[600px] rounded-lg overflow-hidden mb-6 relative z-40">
-              {mapLoaded && <MapComponent locations={locations} />}
+              {mapLoaded && <MapComponent canchas={canchas} />}
             </div>
             <div>
               <h4 className="text-xl font-semibold mb-4 text-amber-800">Ubicaciones:</h4>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {locations.map((location, index) => (
+                {canchas.map((cancha, index) => (
                   <li key={index} className="flex items-start">
                     <MapPin className="mr-2 text-amber-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">{location.name}</span>
+                    <a
+                      href={`https://www.google.com/maps?q=${cancha.lat},${cancha.lng}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-amber-600"
+                    >
+                      {cancha.name}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -179,7 +159,7 @@ function App() {
 
       <footer className="bg-amber-800 text-amber-100 py-8 md:py-12">
         <div className="container mx-auto px-4 text-center">
-        <p className="mb-4">&copy; 2024 Deportes Municipales. Todos los derechos reservados.</p>
+          <p className="mb-4">&copy; 2024 Deportes Municipales. Todos los derechos reservados.</p>
           <div className="flex justify-center space-x-6 mb-6">
             <a href="#" className="hover:text-blue-400 transition-colors"><Facebook /></a>
             <a href="#" className="hover:text-pink-400 transition-colors"><Instagram /></a>
