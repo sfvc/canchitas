@@ -1,6 +1,6 @@
 [
     {
-      "name": "Fútbol",
+      "nombre": "Fútbol",
       "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80",
       "description": "Forma parte de nuestros equipos y compite en ligas locales.",
       "edades": ["6-12 años", "13-17 años", "18+ años"],
@@ -8,7 +8,7 @@
       "docente": ["Juan Pérez", "Rodrigo Comesaña"]
     },
     {
-      "name": "Basket",
+      "nombre": "Basket",
       "image": "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=80",
       "description": "Mejora tus habilidades en la cancha con nuestros entrenamientos.",
       "edades": ["8-14 años", "15-20 años", "21+ años"],
@@ -16,7 +16,7 @@
       "docente": ["Ana Gómez", "Gaston Lorenzani"]
     },
     {
-      "name": "Tenis",
+      "nombre": "Tenis",
       "image": "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=800&q=80",
       "description": "Aprende o perfecciona tu técnica con nuestros instructores.",
       "edades": ["7-12 años", "13-18 años", "19+ años"],
@@ -24,7 +24,7 @@
       "docente": ["Carlos Rodríguez", "Tomas Canonico"]
     },
     {
-      "name": "Volley",
+      "nombre": "Volley",
       "image": "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&q=80",
       "description": "Desde principiantes hasta avanzados, tenemos clases para todos.",
       "edades": ["5-10 años", "11-16 años", "17+ años"],

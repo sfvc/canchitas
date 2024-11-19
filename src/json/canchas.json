@@ -1,31 +1,31 @@
 [
     {
-        "name": "Polideportivo Fray Mamerto Esquiú",
+        "nombre": "Polideportivo Fray Mamerto Esquiú",
         "lat": -28.467211,
         "lng": -65.774920
     },
     {
-        "name": "Canchita Barrio Nueva Catamarca",
+        "nombre": "Canchita Barrio Nueva Catamarca",
         "lat": -28.494920,
         "lng": -65.805670
     },
     {
-        "name": "Club Deportivo Chacarita",
+        "nombre": "Club Deportivo Chacarita",
         "lat": -28.463580,
         "lng": -65.751980
     },
     {
-        "name": "Complejo Deportivo Leones",
+        "nombre": "Complejo Deportivo Leones",
         "lat": -28.472220,
         "lng": -65.779400
     },
     {
-        "name": "Polideportivo 920 Viviendas",
+        "nombre": "Polideportivo 920 Viviendas",
         "lat": -28.467222,
         "lng": -65.809167
     },
     {
-        "name": "Complejo Deportivo Don Balón",
+        "nombre": "Complejo Deportivo Don Balón",
         "lat": -28.463745,
         "lng": -65.776784
     }
