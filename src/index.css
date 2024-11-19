@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .leaflet-container {
-    z-index: 1 !important;
-  }
+  z-index: 1 !important;
+}

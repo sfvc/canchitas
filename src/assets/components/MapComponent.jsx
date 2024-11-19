@@ -13,14 +13,14 @@ const MapComponent = ({ canchas }) => {
   const center = [-28.468611, -65.779167]
 
   return (
-    <MapContainer center={center} zoom={13} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
+    <MapContainer center={center} zoom={12} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {canchas.map((location, index) => (
         <Marker key={index} position={[location.lat, location.lng]}>
           <Popup>
-            <div className="font-semibold text-amber-800">{location.name}</div>
+            <div className="font-semibold text-amber-800">{location.nombre}</div>
           </Popup>
         </Marker>
       ))}
