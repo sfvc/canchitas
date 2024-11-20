@@ -34,7 +34,7 @@ function LandingPage() {
                     </p>
                     <a
                         href="#ubicaciones"
-                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center mx-auto w-96"
+                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center mx-auto md:w-96 w-full"
                     >
                         Conoce nuestras instalaciones
                         <ArrowRight className="ml-2" />
