@@ -10,6 +10,7 @@ function DeportesCarousel({ deportes }) {
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 1,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 1024,
