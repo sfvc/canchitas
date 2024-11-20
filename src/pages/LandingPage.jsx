@@ -7,10 +7,13 @@ import canchas from '../json/canchas.json'
 import deportes from '../json/deportes.json'
 import beneficios from '../json/beneficios.json'
 import 'leaflet/dist/leaflet.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import DeportesCarousel from '../assets/components/DeportesCarousel'
+
 
 function LandingPage() {
     const [mapLoaded, setMapLoaded] = useState(false)
-    const [menuOpen, setMenuOpen] = useState(false)
 
     useEffect(() => {
         setMapLoaded(true)
@@ -29,9 +32,19 @@ function LandingPage() {
                     <p className="text-xl md:text-2xl text-blue-700 mb-6 md:mb-10 max-w-2xl mx-auto">
                         Descubre nuevas pasiones, haz amigos y mantente en forma con nuestras emocionantes actividades deportivas en la capital catamarqueña.
                     </p>
-                    <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center mx-auto">
-                        <a href="#ubicaciones">Conoce nuestras instalaciones</a><ArrowRight className="ml-2" />
-                    </button>
+                    <a
+                        href="#ubicaciones"
+                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center mx-auto w-96"
+                    >
+                        Conoce nuestras instalaciones
+                        <ArrowRight className="ml-2" />
+                    </a>
+                </section>
+
+
+                <section id="filtros" className="mb-12 md:mb-20">
+                    <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 md:mb-12 text-center">Filtros</h3>
+                    <DeportesCarousel deportes={deportes} />
                 </section>
 
                 <section id="actividades" className="mb-12 md:mb-20">
@@ -78,7 +91,7 @@ function LandingPage() {
                                         {/* Docentes */}
                                         <div>
                                             <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
-                                                <User className="mr-2" size={20} /> Docente:
+                                                <User className="mr-2" size={20} /> Docentes:
                                             </h5>
                                             <ul className="list-disc list-inside text-gray-600">
                                                 {deporte.docente.map((docente, i) => (

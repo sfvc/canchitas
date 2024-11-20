@@ -12,7 +12,7 @@ const Navbar = () => {
                     <Link to="/">
                         <img 
                             src={logo} 
-                            alt="Logo Juzgado" 
+                            alt="Logo Canchas" 
                             className="w-48 md:w-40 inline-block mx-auto pointer-events-none" 
                         />
                     </Link>

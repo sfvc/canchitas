@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
 .leaflet-container {
   z-index: 1 !important;
+}
+
+.sports-carousel .slick-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.sports-carousel .slick-prev,
+.sports-carousel .slick-next {
+  color: #2563eb;
+}
+
+.sports-carousel .slick-dots li button:before {
+  color: #2563eb;
 }
