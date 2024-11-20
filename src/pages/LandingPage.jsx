@@ -41,13 +41,12 @@ function LandingPage() {
                     </a>
                 </section>
 
-
-                <section id="filtros" className="mb-12 md:mb-20">
-                    <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 md:mb-12 text-center">Filtros</h3>
+                <section id="actividades" className="mb-12 md:mb-20">
+                    <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 md:mb-12 text-center">Actividades</h3>
                     <DeportesCarousel deportes={deportes} />
                 </section>
 
-                <section id="actividades" className="mb-12 md:mb-20">
+                {/* <section id="actividades" className="mb-12 md:mb-20">
                     <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 md:mb-12 text-center">Nuestras Actividades</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
                         {deportes.map((deporte, index) => (
@@ -64,7 +63,6 @@ function LandingPage() {
                                     <p className="text-gray-600 mb-6">{deporte.description}</p>
 
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                        {/* Grupos */}
                                         <div>
                                             <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
                                                 <Users className="mr-2" size={20} /> Grupos de edad:
@@ -76,7 +74,6 @@ function LandingPage() {
                                             </ul>
                                         </div>
 
-                                        {/* Horarios */}
                                         <div>
                                             <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
                                                 <Clock className="mr-2" size={20} /> Horarios:
@@ -88,7 +85,6 @@ function LandingPage() {
                                             </ul>
                                         </div>
 
-                                        {/* Docentes */}
                                         <div>
                                             <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
                                                 <User className="mr-2" size={20} /> Docentes:
@@ -104,7 +100,7 @@ function LandingPage() {
                             </div>
                         ))}
                     </div>
-                </section>
+                </section> */}
 
                 <section id="beneficios" className="mb-12 md:mb-20">
                     <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 md:mb-12 text-center">Beneficios de participar</h3>

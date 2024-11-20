@@ -36,13 +36,13 @@ function DeportePage() {
 
       {/* Secciones de Información */}
       <section className="container mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-yellow-500 rounded-2xl shadow-lg p-8 hover:scale-105 transition duration-300 transform">
+        <div className="bg-red-500 rounded-2xl shadow-lg p-8 hover:scale-105 transition duration-300 transform">
           <h2 className="text-3xl font-bold text-white mb-4 flex items-center">
             🧒 Grupos de Edad
           </h2>
           <ul className="list-disc list-inside space-y-3 text-white">
             {deporte.edades.map((edad, index) => (
-              <li key={index} className="hover:text-yellow-300 transition duration-200">
+              <li key={index} className="hover:text-red-300 transition duration-200">
                 {edad}
               </li>
             ))}
