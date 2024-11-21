@@ -59,7 +59,6 @@ const ProfilePage = ({ canchas = [] }) => {
 
 
             <div className="container mx-auto p-6">
-
                 {/* Deportes disponibles */}
                 <div>
                     <h3 className="text-lg font-bold text-green-600 mb-4 mt-4">Deportes Disponibles:</h3>
@@ -150,7 +149,6 @@ const ProfilePage = ({ canchas = [] }) => {
                         </a>
                     </div>
                 </div>
-
             </div>
 
             {/* Footer */}

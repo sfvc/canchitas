@@ -13,7 +13,6 @@ function DeportesCarousel({ deportes, onDeporteClick }) {
     };
 
     const handleDeporteClick = (deporte) => {
-        // Llama a la función para actualizar el deporte seleccionado en el componente principal
         onDeporteClick(deporte.nombre);
     };
 
@@ -24,6 +23,8 @@ function DeportesCarousel({ deportes, onDeporteClick }) {
         slidesToShow: 5,
         slidesToScroll: 1,
         arrows: false,
+        autoplay: true,
+        autoplaySpeed: 3000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -39,6 +40,7 @@ function DeportesCarousel({ deportes, onDeporteClick }) {
             },
         ],
     };
+    
 
     return (
         <div>
@@ -47,7 +49,7 @@ function DeportesCarousel({ deportes, onDeporteClick }) {
                     <div
                         key={index}
                         className="p-4 cursor-pointer"
-                        onClick={() => handleDeporteClick(deporte)} // Aquí solo actualiza el filtro
+                        onClick={() => handleDeporteClick(deporte)}
                     >
                         <div
                             className="bg-white rounded-lg shadow-lg text-center p-6 hover:shadow-xl transform transition flex flex-col justify-between h-full"
