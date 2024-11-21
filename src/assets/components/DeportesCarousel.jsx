@@ -20,7 +20,7 @@ function DeportesCarousel({ deportes, onDeporteClick }) {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,

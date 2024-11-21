@@ -37,20 +37,34 @@ function LandingPage() {
             <Navbar />
 
             <main className="container mx-auto px-4 py-8 md:py-12">
-                <section className="text-center mb-12 md:mb-20">
-                    <h2 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4 md:mb-6">
-                        ¡Vive la pasión del deporte en Catamarca!
-                    </h2>
-                    <p className="text-xl md:text-2xl text-blue-700 mb-6 md:mb-10 max-w-2xl mx-auto">
-                        Descubre nuevas pasiones, haz amigos y mantente en forma con nuestras emocionantes actividades deportivas en la capital catamarqueña.
-                    </p>
-                    <a
-                        href="#ubicaciones"
-                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center mx-auto md:w-96 w-full"
-                    >
-                        Conoce nuestras instalaciones
-                        <ArrowRight className="ml-2" />
-                    </a>
+                <section className="flex flex-col md:flex-row items-center mb-12 md:mb-20">
+
+                    <div className="md:w-1/2 h-64 md:h-auto">
+                        <img
+                            src="https://plus.unsplash.com/premium_photo-1663134090418-b27e76a752fd?w=800&q=80"
+                            alt="Deportes en acción"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                        <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                            ¡Vive la pasión del deporte en Catamarca!
+                        </h2>
+                        <h3 className="text-xl md:text-2xl font-semibold text-blue-700 mb-6">
+                            Únete a una comunidad activa y vibrante mientras disfrutas de tus deportes favoritos.
+                        </h3>
+                        <p className="text-lg md:text-xl text-gray-700 mb-6">
+                            Participa en nuestras modernas instalaciones, diseñadas para que experimentes lo mejor del deporte y la vida activa. ¡Tenemos actividades para todas las edades y niveles de experiencia!
+                        </p>
+                        <a
+                            href="#ubicaciones"
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg px-6 py-3 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center"
+                        >
+                            Descubre nuestras instalaciones
+                            <ArrowRight className="ml-2" />
+                        </a>
+                    </div>
                 </section>
 
                 <section id="actividades" className="mb-12 md:mb-20">
