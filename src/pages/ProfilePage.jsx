@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { Clock, Facebook, Instagram, User, Users, Youtube } from "lucide-react";
@@ -16,6 +16,10 @@ L.Icon.Default.mergeOptions({
 
 const ProfilePage = ({ canchas = [] }) => {
     const { nombre } = useParams();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const cancha = canchas.find((c) => c.nombre === nombre);
 
