@@ -4,12 +4,10 @@ import L from 'leaflet';
 const MapComponent = ({ canchas, deporteSeleccionado }) => {
   const center = [-28.468611, -65.779167];
   
-  // Filtra las canchas por el deporte seleccionado
   const canchasFiltradas = canchas.filter(cancha =>
     cancha.deportes && cancha.deportes.includes(deporteSeleccionado)
   );
 
-  // Si no hay canchas filtradas, muestra las canchas completas
   const canchasAMostrar = deporteSeleccionado ? canchasFiltradas : canchas;
 
   return (

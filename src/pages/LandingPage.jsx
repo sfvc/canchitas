@@ -46,7 +46,7 @@ function LandingPage() {
                     </p>
                     <a
                         href="#ubicaciones"
-                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center mx-auto md:w-96 w-full"
+                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center mx-auto md:w-96 w-full"
                     >
                         Conoce nuestras instalaciones
                         <ArrowRight className="ml-2" />
@@ -65,7 +65,7 @@ function LandingPage() {
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-base md:text-lg">
                                 {beneficios.map((beneficio, index) => (
                                     <li key={index} className="flex items-center text-gray-700">
-                                        <svg className="w-5 h-5 md:w-6 md:h-6 mr-2 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-5 h-5 md:w-6 md:h-6 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         {beneficio}
@@ -90,18 +90,26 @@ function LandingPage() {
                         <div ref={ubicacionesRef} className="h-[500px] md:h-[600px] rounded-lg overflow-hidden mb-6 relative z-40">
                             {mapLoaded && <MapComponent canchas={canchasFiltradas} deporteSeleccionado={deporteSeleccionado} />}
                         </div>
-                        <div>
-                            <h4 className="text-xl font-semibold mb-4 text-blue-700">Más información sobre nuestras canchas:</h4>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {canchasFiltradas.map((cancha, index) => (
-                                    <li key={index} className="flex items-start">
-                                        <MapPin className="mr-2 text-yellow-600 flex-shrink-0 mt-1" />
-                                        <Link className="text-gray-700 hover:text-yellow-600" to={`/canchas/${cancha.nombre}`}>
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            {canchasFiltradas.map((cancha, index) => (
+                                <Link
+                                    to={`/canchas/${cancha.nombre}`}
+                                    key={index}
+                                    className="group bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6"
+                                >
+                                    <div className="flex flex-col items-center text-center">
+                                        <div className="bg-blue-100 text-blue-700 rounded-full p-4 mb-4">
+                                            <MapPin className="w-8 h-8" />
+                                        </div>
+                                        <h4 className="text-xl font-semibold text-blue-800 mb-2 group-hover:text-yellow-500 transition">
                                             {cancha.nombre}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                                        </h4>
+                                        <p className="text-gray-600 text-sm">
+                                            {cancha.descripcion || "Haz clic para más detalles"}
+                                        </p>
+                                    </div>
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 </section>

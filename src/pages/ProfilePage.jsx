@@ -36,10 +36,27 @@ const ProfilePage = ({ canchas = [] }) => {
 
             <Navbar />
 
-            <header className="bg-blue-700 text-white p-6 shadow-md">
+            <header className="bg-blue-700 text-white p-6 shadow-md rounded-b-lg">
                 <h1 className="text-3xl font-bold text-center">{cancha.nombre}</h1>
-                <p className="text-center text-lg mt-2">Encuentra más sobre esta cancha y sus actividades</p>
+                <p className="text-center text-lg mt-2">Conocé más sobre esta cancha y sus actividades</p>
+                <div className="mt-4 text-center">
+                    <p className="text-sm md:text-base">
+                        <span className="font-semibold">Horario general:</span> Lunes a Viernes de 9:00 a 19:00
+                    </p>
+                    <p className="text-sm md:text-base">
+                        <span className="font-semibold">Dirección:</span> {cancha.direccion || 'Ubicación no especificada'}
+                    </p>
+                    <p className="text-sm md:text-base">
+                        <span className="font-semibold">Teléfono:</span> {cancha.telefono || 'No disponible'}
+                    </p>
+                    {cancha.descripcion && (
+                        <p className="text-sm md:text-base mt-2">
+                            <span className="font-semibold">Descripción:</span> {cancha.descripcion}
+                        </p>
+                    )}
+                </div>
             </header>
+
 
             <div className="container mx-auto p-6">
 
@@ -51,6 +68,7 @@ const ProfilePage = ({ canchas = [] }) => {
                         zoom={15}
                         style={{ height: '400px', width: '100%' }}
                         scrollWheelZoom={false}
+                        className="rounded-lg shadow-md"
                     >
                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                         <Marker
@@ -60,15 +78,14 @@ const ProfilePage = ({ canchas = [] }) => {
                                     window.open(`https://www.google.com/maps?q=${cancha.lat},${cancha.lng}`, '_blank');
                                 },
                             }}
-                        >
-                        </Marker>
+                        />
                     </MapContainer>
-                    <div className="text-center mt-4">
+                    <div className="text-center mt-6">
                         <a
                             href={`https://www.google.com/maps?q=${cancha.lat},${cancha.lng}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline"
+                            className="inline-block bg-blue-600 text-white font-semibold text-lg py-2 px-6 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl transition transform hover:-translate-y-1"
                         >
                             Ver en Google Maps
                         </a>
@@ -77,7 +94,7 @@ const ProfilePage = ({ canchas = [] }) => {
 
                 {/* Deportes disponibles */}
                 <div>
-                    <h3 className="text-lg font-bold text-green-600 mb-4">Deportes Disponibles:</h3>
+                    <h3 className="text-lg font-bold text-green-600 mb-4 mt-4">Deportes Disponibles:</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
                         {deportesDisponibles.map((deporte, i) => (
                             <div

@@ -36,7 +36,7 @@
       "description": "Desde principiantes hasta avanzados, tenemos clases para todos.",
       "edades": ["5 - 10 años", "11 - 16 años", "+ 17 años"],
       "horarios": ["Miércoles y Viernes 16:00-18:00", "Martes y Jueves 18:00-20:00", "Sábados 11:00-13:00"],
-      "docente": ["Sofía Martínez", "Nahuel Soria Parodi"],
+      "docente": ["Nahuel Soria Parodi", "Matias Amal Catriel Farjatt"],
       "svgIcon": "/svg/voley.svg"
     },
     {
