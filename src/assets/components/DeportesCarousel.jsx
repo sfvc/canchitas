@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 
-function DeportesCarousel({ deportes }) {
-    const navigate = useNavigate();
-
+function DeportesCarousel({ deportes, onDeporteClick }) {
     const [open, setOpen] = useState(null);
 
     const handleToggle = (index) => {
@@ -13,6 +10,11 @@ function DeportesCarousel({ deportes }) {
         } else {
             setOpen(index);
         }
+    };
+
+    const handleDeporteClick = (deporte) => {
+        // Llama a la función para actualizar el deporte seleccionado en el componente principal
+        onDeporteClick(deporte.nombre);
     };
 
     const settings = {
@@ -45,7 +47,7 @@ function DeportesCarousel({ deportes }) {
                     <div
                         key={index}
                         className="p-4 cursor-pointer"
-                        onClick={() => navigate(`/deportes/${deporte.url}`)}
+                        onClick={() => handleDeporteClick(deporte)} // Aquí solo actualiza el filtro
                     >
                         <div
                             className="bg-white rounded-lg shadow-lg text-center p-6 hover:shadow-xl transform transition flex flex-col justify-between h-full"

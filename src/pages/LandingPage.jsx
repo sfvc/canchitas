@@ -1,23 +1,35 @@
-import { useState, useEffect } from 'react'
-import { ArrowRight, Clock, Users, MapPin, Facebook, Instagram, Youtube, User } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { ArrowRight, MapPin, Facebook, Instagram, Youtube } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Navbar from '../assets/components/Navbar'
 import MapComponent from '../assets/components/MapComponent'
 import canchas from '../json/canchas.json'
 import deportes from '../json/deportes.json'
 import beneficios from '../json/beneficios.json'
+import DeportesCarousel from '../assets/components/DeportesCarousel'
 import 'leaflet/dist/leaflet.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import DeportesCarousel from '../assets/components/DeportesCarousel'
-
 
 function LandingPage() {
-    const [mapLoaded, setMapLoaded] = useState(false)
+    const [mapLoaded, setMapLoaded] = useState(false);
+    const [deporteSeleccionado, setDeporteSeleccionado] = useState(null);
+    const ubicacionesRef = useRef(null);
 
     useEffect(() => {
-        setMapLoaded(true)
-    }, [])
+        setMapLoaded(true);
+    }, []);
+
+    const handleDeporteClick = (deporte) => {
+        setDeporteSeleccionado(deporte);
+        if (ubicacionesRef.current) {
+            ubicacionesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    const canchasFiltradas = deporteSeleccionado
+        ? canchas.filter((cancha) => cancha.deportes.includes(deporteSeleccionado))
+        : canchas;
 
     return (
         <div className="min-h-screen bg-gray-100 text-gray-800">
@@ -43,64 +55,8 @@ function LandingPage() {
 
                 <section id="actividades" className="mb-12 md:mb-20">
                     <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 md:mb-12 text-center">Actividades</h3>
-                    <DeportesCarousel deportes={deportes} />
+                    <DeportesCarousel deportes={deportes} onDeporteClick={handleDeporteClick} />
                 </section>
-
-                {/* <section id="actividades" className="mb-12 md:mb-20">
-                    <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 md:mb-12 text-center">Nuestras Actividades</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
-                        {deportes.map((deporte, index) => (
-                            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all hover:shadow-lg">
-                                <Link to={`/deportes/${deporte.url}`}>
-                                    <img
-                                        src={deporte.image}
-                                        alt={deporte.nombre}
-                                        className="w-full h-48 md:h-64 object-cover"
-                                    />
-                                </Link>
-                                <div className="p-4 md:p-6">
-                                    <h4 className="text-xl md:text-2xl font-semibold mb-4 text-blue-700">{deporte.nombre}</h4>
-                                    <p className="text-gray-600 mb-6">{deporte.description}</p>
-
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                        <div>
-                                            <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
-                                                <Users className="mr-2" size={20} /> Grupos de edad:
-                                            </h5>
-                                            <ul className="list-disc list-inside text-gray-600">
-                                                {deporte.edades.map((edad, i) => (
-                                                    <li key={i}>{edad}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
-                                                <Clock className="mr-2" size={20} /> Horarios:
-                                            </h5>
-                                            <ul className="list-disc list-inside text-gray-600">
-                                                {deporte.horarios.map((horario, i) => (
-                                                    <li key={i}>{horario}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
-                                                <User className="mr-2" size={20} /> Docentes:
-                                            </h5>
-                                            <ul className="list-disc list-inside text-gray-600">
-                                                {deporte.docente.map((docente, i) => (
-                                                    <li key={i}>{docente}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </section> */}
 
                 <section id="beneficios" className="mb-12 md:mb-20">
                     <h3 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 md:mb-12 text-center">Beneficios de participar</h3>
@@ -131,23 +87,18 @@ function LandingPage() {
                                 Horario de atención para inscripciones: Lunes a Viernes de 9:00 a 18:00
                             </p>
                         </div>
-                        <div className="h-[500px] md:h-[600px] rounded-lg overflow-hidden mb-6 relative z-40">
-                            {mapLoaded && <MapComponent canchas={canchas} />}
+                        <div ref={ubicacionesRef} className="h-[500px] md:h-[600px] rounded-lg overflow-hidden mb-6 relative z-40">
+                            {mapLoaded && <MapComponent canchas={canchasFiltradas} deporteSeleccionado={deporteSeleccionado} />}
                         </div>
                         <div>
-                            <h4 className="text-xl font-semibold mb-4 text-blue-700">Ubicaciones:</h4>
+                            <h4 className="text-xl font-semibold mb-4 text-blue-700">Más información sobre nuestras canchas:</h4>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {canchas.map((cancha, index) => (
+                                {canchasFiltradas.map((cancha, index) => (
                                     <li key={index} className="flex items-start">
                                         <MapPin className="mr-2 text-yellow-600 flex-shrink-0 mt-1" />
-                                        <a
-                                            href={`https://www.google.com/maps?q=${cancha.lat},${cancha.lng}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-gray-700 hover:text-yellow-600"
-                                        >
+                                        <Link className="text-gray-700 hover:text-yellow-600" to={`/canchas/${cancha.nombre}`}>
                                             {cancha.nombre}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -168,7 +119,7 @@ function LandingPage() {
                 </div>
             </footer>
         </div>
-    )
+    );
 }
 
-export default LandingPage
+export default LandingPage;
