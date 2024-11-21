@@ -60,38 +60,6 @@ const ProfilePage = ({ canchas = [] }) => {
 
             <div className="container mx-auto p-6">
 
-                {/* Mapa */}
-                <div className="mt-8">
-                    <h3 className="text-lg font-bold text-green-600 mb-4">Ubicación en el mapa</h3>
-                    <MapContainer
-                        center={[cancha.lat, cancha.lng]}
-                        zoom={15}
-                        style={{ height: '400px', width: '100%' }}
-                        scrollWheelZoom={false}
-                        className="rounded-lg shadow-md"
-                    >
-                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                        <Marker
-                            position={[cancha.lat, cancha.lng]}
-                            eventHandlers={{
-                                click: () => {
-                                    window.open(`https://www.google.com/maps?q=${cancha.lat},${cancha.lng}`, '_blank');
-                                },
-                            }}
-                        />
-                    </MapContainer>
-                    <div className="text-center mt-6">
-                        <a
-                            href={`https://www.google.com/maps?q=${cancha.lat},${cancha.lng}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-blue-600 text-white font-semibold text-lg py-2 px-6 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl transition transform hover:-translate-y-1"
-                        >
-                            Ver en Google Maps
-                        </a>
-                    </div>
-                </div>
-
                 {/* Deportes disponibles */}
                 <div>
                     <h3 className="text-lg font-bold text-green-600 mb-4 mt-4">Deportes Disponibles:</h3>
@@ -150,6 +118,39 @@ const ProfilePage = ({ canchas = [] }) => {
                         ))}
                     </div>
                 </div>
+
+                {/* Mapa */}
+                <div className="mt-8">
+                    <h3 className="text-lg font-bold text-green-600 mb-4">Ubicación en el mapa</h3>
+                    <MapContainer
+                        center={[cancha.lat, cancha.lng]}
+                        zoom={15}
+                        style={{ height: '400px', width: '100%' }}
+                        scrollWheelZoom={false}
+                        className="rounded-lg shadow-md"
+                    >
+                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                        <Marker
+                            position={[cancha.lat, cancha.lng]}
+                            eventHandlers={{
+                                click: () => {
+                                    window.open(`https://www.google.com/maps?q=${cancha.lat},${cancha.lng}`, '_blank');
+                                },
+                            }}
+                        />
+                    </MapContainer>
+                    <div className="text-center mt-6">
+                        <a
+                            href={`https://www.google.com/maps?q=${cancha.lat},${cancha.lng}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-blue-600 text-white font-semibold text-lg py-2 px-6 rounded-full shadow-lg hover:bg-blue-700 hover:shadow-xl transition transform hover:-translate-y-1"
+                        >
+                            Ver en Google Maps
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
             {/* Footer */}

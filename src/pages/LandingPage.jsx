@@ -92,8 +92,8 @@ function LandingPage() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                             {canchasFiltradas.map((cancha, index) => (
-                                <Link
-                                    to={`/canchas/${cancha.nombre}`}
+                                <a
+                                    href={`/canchas/${cancha.nombre}`}
                                     key={index}
                                     className="group bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6"
                                 >
@@ -108,7 +108,7 @@ function LandingPage() {
                                             {cancha.descripcion || "Haz clic para más detalles"}
                                         </p>
                                     </div>
-                                </Link>
+                                </a>
                             ))}
                         </div>
                     </div>
