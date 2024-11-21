@@ -46,7 +46,7 @@
       "description": "Mejora tus habilidades en la cancha con nuestros entrenamientos.",
       "edades": ["8 - 12 años", "13 - 18 años", "+ 19 años"],
       "horarios": ["Martes y Jueves 16:00-18:00", "Martes y Jueves 18:00-20:00", "Sábados 11:00-13:00"],
-      "docente": ["Matias Borquez", "Luis Fernando Castillo"],
+      "docente": ["Gonzalo Ramiro Turati", "Luis Fernando Castillo"],
       "svgIcon": "/svg/rugby.svg"
     }
   ]

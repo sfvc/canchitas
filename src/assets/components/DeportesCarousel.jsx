@@ -20,11 +20,11 @@ function DeportesCarousel({ deportes, onDeporteClick }) {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 4000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -69,7 +69,7 @@ function DeportesCarousel({ deportes, onDeporteClick }) {
                 ))}
             </Slider>
 
-            <div className="mt-12">
+            {/* <div className="mt-12">
                 <h3 className="text-2xl font-bold text-blue-700 mb-6">Grupos por Edades</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-5 gap-6">
                     {deportes.map((deporte, index) => (
@@ -92,7 +92,7 @@ function DeportesCarousel({ deportes, onDeporteClick }) {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

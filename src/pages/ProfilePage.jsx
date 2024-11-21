@@ -85,6 +85,17 @@ const ProfilePage = ({ canchas = [] }) => {
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                         <div>
                                             <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
+                                                <User className="mr-2" size={20} /> Docentes:
+                                            </h5>
+                                            <ul className="list-disc list-inside text-gray-600">
+                                                {deporte.docente.map((docente, i) => (
+                                                    <li key={i}>{docente}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        <div>
+                                            <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
                                                 <Users className="mr-2" size={20} /> Grupos de edad:
                                             </h5>
                                             <ul className="list-disc list-inside text-gray-600">
@@ -101,17 +112,6 @@ const ProfilePage = ({ canchas = [] }) => {
                                             <ul className="list-disc list-inside text-gray-600">
                                                 {deporte.horarios.map((horario, i) => (
                                                     <li key={i}>{horario}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        <div>
-                                            <h5 className="font-semibold text-blue-500 mb-2 flex items-center">
-                                                <User className="mr-2" size={20} /> Docentes:
-                                            </h5>
-                                            <ul className="list-disc list-inside text-gray-600">
-                                                {deporte.docente.map((docente, i) => (
-                                                    <li key={i}>{docente}</li>
                                                 ))}
                                             </ul>
                                         </div>
