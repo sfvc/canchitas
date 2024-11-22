@@ -26,7 +26,7 @@
       "description": "Aprende o perfecciona tu técnica con nuestros instructores.",
       "edades": ["7 - 12 años", "13 - 18 años", "+ 19 años"],
       "horarios": ["Lunes y Viernes 15:00-17:00", "Martes y Jueves 17:00-19:00", "Sábados 08:00-10:00"],
-      "docente": ["Carlos Rodríguez", "Tomas Canonico"],
+      "docente": ["Tomas Canonico", "Franco Nahuel Gomez"],
       "svgIcon": "/svg/tenis.svg"
     },
     {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { Clock, Facebook, Instagram, User, Users, Youtube } from "lucide-react";

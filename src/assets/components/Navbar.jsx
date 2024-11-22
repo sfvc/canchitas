@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo_CATACAPI_claro.png';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    // Detectar scroll para cambiar estilo
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
-        <header className="bg-blue-600 shadow-md sticky top-0 z-50">
+        <header
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-blue-700 shadow-md sticky top-0 z-5' : 'bg-blue-600 bg-opacity-90 shadow-md sticky top-0 z-50'
+            }`}
+    >
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <h1 className="text-xl md:text-3xl font-bold text-white">
                     <Link to="/">
@@ -27,7 +44,7 @@ const Navbar = () => {
                 </button>
                 <nav className={`${menuOpen ? 'block' : 'hidden'} md:block absolute md:relative top-full left-0 w-full md:w-auto bg-blue-600 md:bg-transparent`}>
                     <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 p-4 md:p-0">
-                        <li><a href="/" className="text-white hover:text-yellow-400 transition-colors block">Inicio</a></li>
+                        <li><Link to="/" className="text-white hover:text-yellow-400 transition-colors block">Inicio</Link></li>
                         <li><a href="#actividades" className="text-white hover:text-yellow-400 transition-colors block">Actividades</a></li>
                         <li><a href="#beneficios" className="text-white hover:text-yellow-400 transition-colors block">Beneficios</a></li>
                         <li><a href="#ubicaciones" className="text-white hover:text-yellow-400 transition-colors block">Ubicaciones</a></li>
