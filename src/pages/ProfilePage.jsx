@@ -48,9 +48,6 @@ const ProfilePage = ({ canchas = [] }) => {
                         <span className="font-semibold">Horario general:</span> Lunes a Viernes de 9:00 a 19:00
                     </p>
                     <p className="text-sm md:text-base">
-                        <span className="font-semibold">Dirección:</span> {cancha.direccion || 'Ubicación no especificada'}
-                    </p>
-                    <p className="text-sm md:text-base">
                         <span className="font-semibold">Teléfono:</span> {cancha.telefono || 'No disponible'}
                     </p>
                     {cancha.descripcion && (

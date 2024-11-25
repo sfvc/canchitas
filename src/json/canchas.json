@@ -1,38 +1,226 @@
 [
     {
-        "nombre": "Polideportivo Fray Mamerto Esquiú",
-        "lat": -28.467211,
-        "lng": -65.774920,
-        "deportes": ["Fútbol", "Básquet"]
+        "nombre": "20 DE MARZO",
+        "lng": -65.78797712613007,
+        "lat": -28.50368342927241,
+        "deportes": ["Básquet", "Vóley", "Tenis"],
+        "telefono": "3834234567"
     },
     {
-        "nombre": "Canchita Barrio Nueva Catamarca",
-        "lat": -28.494920,
-        "lng": -65.805670,
-        "deportes": ["Tenis"]
+        "nombre": "ACHACHAY",
+        "lng": -65.80441888809275,
+        "lat": -28.4748569611652,
+        "deportes": ["Básquet", "Vóley", "Tenis"],
+        "telefono": "3834456789"
     },
     {
-        "nombre": "Club Deportivo Chacarita",
-        "lat": -28.463580,
-        "lng": -65.751980,
-        "deportes": ["Vóley", "Básquet"]
+        "nombre": "ALTOS VERDES",
+        "lng": -65.80255815557787,
+        "lat": -28.49312175914676,
+        "deportes": ["Vóley", "Tenis"],
+        "telefono": "3834099999"
     },
     {
-        "nombre": "Complejo Deportivo Leones",
-        "lat": -28.472220,
-        "lng": -65.779400,
-        "deportes": ["Fútbol", "Vóley"]
+        "nombre": "AV MEXICO Y PEDRO AGOTE",
+        "lng": -65.78248019132586,
+        "lat": -28.4446635684166,
+        "deportes": ["Rugby", "Fútbol"],
+        "telefono": "3834100000"
     },
     {
-        "nombre": "Polideportivo 920 Viviendas",
-        "lat": -28.467222,
-        "lng": -65.809167,
-        "deportes": ["Fútbol", "Tenis"]
+        "nombre": "BELLA VISTA",
+        "lng": -65.76524326277435,
+        "lat": -28.4736211986868,
+        "deportes": ["Básquet", "Vóley"],
+        "telefono": "3834100000"
     },
     {
-        "nombre": "Complejo Deportivo Don Balón",
-        "lat": -28.463745,
-        "lng": -65.776784,
-        "deportes": ["Fútbol", "Básquet", "Vóley", "Tenis", "Rugby"]
+        "nombre": "BERMUDEZ",
+        "lng": -65.77118255820801,
+        "lat": -28.4632309132872,
+        "deportes": ["Vóley", "Tenis"],
+        "telefono": "3834123456"
+    },
+    {
+        "nombre": "CIIC NORTE",
+        "lng": -65.78702777777778,
+        "lat": -28.43333333333333,
+        "deportes": ["Tenis", "Rugby"],
+        "telefono": "3834123456"
+    },
+    {
+        "nombre": "CESAR CARDOZO",
+        "lng": -65.76878403645708,
+        "lat": -28.44136860289661,
+        "deportes": ["Fútbol", "Básquet"],
+        "telefono": "3834099999"
+    },
+    {
+        "nombre": "GUIDO JALIL",
+        "lng": -65.77854701796265,
+        "lat": -28.49532639954461,
+        "deportes": ["Vóley", "Tenis", "Rugby"],
+        "telefono": "3834234567"
+    },
+    {
+        "nombre": "HEROES DE MALVINAS",
+        "lng": -65.79452777777777,
+        "lat": -28.46863888888889,
+        "deportes": ["Rugby", "Fútbol"],
+        "telefono": "3834111111"
+    },
+    {
+        "nombre": "HUGO RAFAEL SOTO",
+        "lng": -65.77494444444444,
+        "lat": -28.45044444444444,
+        "deportes": ["Rugby", "Fútbol"],
+        "telefono": "3834123456"
+    },
+    {
+        "nombre": "JOSE CARRIZO",
+        "lng": -65.77475598239576,
+        "lat": -28.46230832893252,
+        "deportes": ["Fútbol", "Básquet"],
+        "telefono": "3834100000"
+    },
+    {
+        "nombre": "JULIO JUAREZ",
+        "lng": -65.74361672800489,
+        "lat": -28.45178215349959,
+        "deportes": ["Vóley", "Tenis"],
+        "telefono": "3834100000"
+    },
+    {
+        "nombre": "NODO TEC. 1",
+        "lng": -65.7873827139619,
+        "lat": -28.47700216181986,
+        "deportes": ["Vóley", "Tenis", "Rugby"],
+        "telefono": "3834345678"
+    },
+    {
+        "nombre": "NODO TEC.2",
+        "lng": -65.78714855211236,
+        "lat": -28.47771205313398,
+        "deportes": ["Fútbol", "Básquet", "Vóley"],
+        "telefono": "3834456789"
+    },
+    {
+        "nombre": "NUESTROS NIÑOS",
+        "lng": -65.80149999999999,
+        "lat": -28.49561111111111,
+        "deportes": ["Básquet", "Vóley"],
+        "telefono": "3834099999"
+    },
+    {
+        "nombre": "OSCAR NAVARRO",
+        "lng": -65.76369720227508,
+        "lat": -28.46341741468786,
+        "deportes": ["Fútbol", "Básquet"],
+        "telefono": "3834123456"
+    },
+    {
+        "nombre": "PARQUE AMERICA (P.LINEAL)",
+        "lng": -65.76743698023434,
+        "lat": -28.43982625273201,
+        "deportes": ["Rugby", "Fútbol", "Básquet"],
+        "telefono": "3834345678"
+    },
+    {
+        "nombre": "PEDRO AVELLANEDA",
+        "lng": -65.79636111111111,
+        "lat": -28.45836111111111,
+        "deportes": ["Fútbol", "Básquet"],
+        "telefono": "3834111111"
+    },
+    {
+        "nombre": "PLAZA",
+        "lng": -65.79418116723704,
+        "lat": -28.48587316108279,
+        "deportes": ["Tenis", "Rugby"],
+        "telefono": "3834100000"
+    },
+    {
+        "nombre": "PLAZA DE LA VIDA",
+        "lng": -65.76465342581645,
+        "lat": -28.43612211644,
+        "deportes": ["Básquet", "Vóley", "Tenis"],
+        "telefono": "3834345678"
+    },
+    {
+        "nombre": "PLAZA ESPAÑA",
+        "lng": -65.77964390300392,
+        "lat": -28.48860928045761,
+        "deportes": ["Fútbol", "Básquet", "Vóley"],
+        "telefono": "3834345678"
+    },
+    {
+        "nombre": "RATA GORDILLO",
+        "lng": -65.77044444444445,
+        "lat": -28.42819444444445,
+        "deportes": ["Básquet", "Vóley"],
+        "telefono": "3834123456"
+    },
+    {
+        "nombre": "ROBERTO CARENA",
+        "lng": -65.75722832375308,
+        "lat": -28.46402621907295,
+        "deportes": ["Tenis", "Rugby"],
+        "telefono": "3834111111"
+    },
+    {
+        "nombre": "SAL GEMA",
+        "lng": -65.80567051535139,
+        "lat": -28.49482110364381,
+        "deportes": ["Rugby", "Fútbol"],
+        "telefono": "3834099999"
+    },
+    {
+        "nombre": "SAN ANTONIO SUR",
+        "lng": -65.79552755104498,
+        "lat": -28.49870650549184,
+        "deportes": ["Fútbol", "Básquet", "Vóley"],
+        "telefono": "3834234567"
+    },
+    {
+        "nombre": "SAN JORGE",
+        "lng": -65.78859008298116,
+        "lat": -28.49162341310836,
+        "deportes": ["Tenis", "Rugby", "Fútbol"],
+        "telefono": "3834456789"
+    },
+    {
+        "nombre": "SAN MARTIN DE PORRES (RENE TETE VEGA)",
+        "lng": -65.79542178875822,
+        "lat": -28.50700540318986,
+        "deportes": ["Rugby", "Fútbol", "Básquet"],
+        "telefono": "3834234567"
+    },
+    {
+        "nombre": "SAN RAMÓN",
+        "lng": -65.79280555555556,
+        "lat": -28.47925,
+        "deportes": ["Básquet", "Vóley"],
+        "telefono": "3834111111"
+    },
+    {
+        "nombre": "SANTA MARTA",
+        "lng": -65.78922340889891,
+        "lat": -28.49971162064501,
+        "deportes": ["Tenis", "Rugby", "Fútbol"],
+        "telefono": "3834234567"
+    },
+    {
+        "nombre": "YRIGOYEN",
+        "lng": -65.77827726308976,
+        "lat": -28.48887117655859,
+        "deportes": ["Tenis", "Rugby", "Fútbol"],
+        "telefono": "3834345678"
+    },
+    {
+        "nombre": "WALTER AREVALO",
+        "lng": -65.80377777777778,
+        "lat": -28.46580555555555,
+        "deportes": ["Vóley", "Tenis"],
+        "telefono": "3834111111"
     }
 ]

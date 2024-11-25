@@ -104,7 +104,7 @@ function LandingPage() {
                         <div ref={ubicacionesRef} className="h-[500px] md:h-[600px] rounded-lg overflow-hidden mb-6 relative z-40">
                             {mapLoaded && <MapComponent canchas={canchasFiltradas} deporteSeleccionado={deporteSeleccionado} />}
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
                             {canchasFiltradas.map((cancha, index) => (
                                 <Link
                                     to={`/canchas/${cancha.nombre}`}
@@ -115,7 +115,7 @@ function LandingPage() {
                                         <div className="bg-blue-100 text-blue-700 rounded-full p-4 mb-4">
                                             <MapPin className="w-8 h-8" />
                                         </div>
-                                        <h4 className="text-xl font-semibold text-blue-800 mb-2 group-hover:text-yellow-500 transition">
+                                        <h4 className="text-xl font-semibold text-gray-600 mb-2 group-hover:text-yellow-500 transition">
                                             {cancha.nombre}
                                         </h4>
                                         <p className="text-gray-600 text-sm">
